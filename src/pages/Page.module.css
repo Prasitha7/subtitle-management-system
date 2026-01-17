@@ -1,4 +1,58 @@
-.page{
-    margin-left: 1rem;
-    margin-right: 1rem;
+.page {
+  margin: 1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Title */
+.page h2 {
+  margin-bottom: 1rem;
+}
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+.table thead {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: white;
+}
+
+.table th {
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Body */
+.table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+
+/* Zebra rows */
+.table tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+/* Hover effect */
+.table tbody tr:hover {
+  background-color: #eef3ff;
+  transform: scale(1.005);
+  transition: all 0.15s ease-in-out;
+}
+
+/* Empty state */
+.empty {
+  padding: 1rem;
+  color: #666;
+  font-style: italic;
 }
