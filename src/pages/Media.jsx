@@ -19,16 +19,20 @@ function Media() {
   const [showAddMedia, setShowAddMedia] = useState(false);
 
   useEffect(() => {
-    fetchMedia()
-      .then(data => {
-        setMovies(data.filter(m => m.type === "MOVIE"));
-      })
-      .catch(err => setError(err.message))
-      .finally(() => setLoading(false));
-  }, []);
+  fetchMedia(token)
+    .then(data => {
+      setMovies(data.filter(m => m.type === "MOVIE"));
+    })
+    .catch(err => {
+      if (err.message === "AUTH_REQUIRED") {
+        setShowLogin(true);
+      } else {
+        setError(err.message);
+      }
+    })
+    .finally(() => setLoading(false));
+}, [token]);
 
-  if (loading) return <p>⏳ Loading movies...</p>;
-  if (error) return <p style={{ color: "red" }}>❌ Error: {error}</p>;
 
   return (
     <div className={styles.page}>

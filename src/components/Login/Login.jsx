@@ -1,3 +1,6 @@
+import { useState } from "react";
+const auth_url = import.meta.env.VITE_AUTH_URL;
+
 function Login({ onClose, onLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
